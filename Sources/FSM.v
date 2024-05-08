@@ -18,6 +18,7 @@ module FSM #(parameter WIDTH_MUL = 5)
     output reg            en_ashr,
     output reg            en_acc,
     output reg            en_count,
+    output reg            en_bcd,
     output reg            rst_count,
     output reg            ready
 );
@@ -29,6 +30,7 @@ localparam [2:0] S_10      = 3'b010;
 localparam [2:0] S_11_00   = 3'b110;
 localparam [2:0] S_READY   = 3'b100;
 localparam [2:0] S_WAIT    = 3'b101;
+localparam [2:0] S_BCD     = 3'b111;
 
 reg [2:0]           state = S_INIT;
 
@@ -43,18 +45,7 @@ always @(posedge rst, posedge clk)
                 case (state)
                     S_INIT: if (enable_fsm == 1'b1) 
                                 begin
-                                    if ({Qlsb,Qn} == 2'b01) 
-                                        begin
-                                            state <= S_01;
-                                        end
-                                    else if ({Qlsb,Qn} == 2'b10) 
-                                        begin
-                                            state <= S_10;
-                                        end
-                                    else
-                                        begin
-                                            state <= S_11_00;
-                                        end
+                                    state <= S_WAIT;
                                 end
                     S_IDLE: if (count == 3'b101 ) 
                                 begin
@@ -93,11 +84,15 @@ always @(posedge rst, posedge clk)
                                 end 
                     S_READY :
                                 begin
-                                    state <= S_INIT;
+                                    state <= S_BCD;
                                 end
                     S_WAIT:    
                                 begin
                                     state <= S_IDLE;
+                                end 
+                    S_BCD:    
+                                begin
+                                    state <= S_INIT;
                                 end 
                     default: 
                         begin
@@ -118,7 +113,8 @@ always @(state)
                     en_acc    = 1'b0;
                     en_count  = 1'b0;
                     rst_count = 1'b1;
-                    ready     = 1'b0;       
+                    ready     = 1'b0; 
+                    en_bcd    = 1'b0;      
                 end
             S_IDLE: 
                 begin
@@ -128,6 +124,7 @@ always @(state)
                     en_count  = 1'b0;
                     rst_count = 1'b0;
                     ready     = 1'b0;
+                    en_bcd    = 1'b0;
                 end
             S_01: 
                 begin
@@ -137,6 +134,7 @@ always @(state)
                     en_count  = 1'b0;
                     rst_count = 1'b0;
                     ready     = 1'b0;
+                    en_bcd    = 1'b0;
                 end      
             S_10: 
                 begin
@@ -146,6 +144,7 @@ always @(state)
                     en_count  = 1'b0;
                     rst_count = 1'b0;
                     ready     = 1'b0;
+                    en_bcd    = 1'b0;
                 end            
             S_11_00 :
                 begin
@@ -155,6 +154,7 @@ always @(state)
                     en_count  = 1'b1;
                     rst_count = 1'b0;
                     ready     = 1'b0;
+                    en_bcd    = 1'b0;
                 end      
             S_READY :
                 begin
@@ -164,6 +164,7 @@ always @(state)
                     en_count  = 1'b0;
                     rst_count = 1'b0;
                     ready     = 1'b1;
+                    en_bcd    = 1'b0;
                 end      
             S_WAIT :
                 begin
@@ -173,6 +174,17 @@ always @(state)
                     en_count  = 1'b0;
                     rst_count = 1'b0;
                     ready     = 1'b0;
+                    en_bcd    = 1'b0;
+                end      
+            S_BCD :
+                begin
+                    en_mux    = 1'b0;
+                    en_ashr   = 1'b0;
+                    en_acc    = 1'b0;
+                    en_count  = 1'b0;
+                    rst_count = 1'b0;
+                    ready     = 1'b0;
+                    en_bcd    = 1'b1;
                 end      
             default: 
                 begin
@@ -182,6 +194,7 @@ always @(state)
                     en_count  = 1'b0;
                     rst_count = 1'b0;
                     ready     = 1'b0;
+                    en_bcd    = 1'b0;
                 end
         endcase
     end
