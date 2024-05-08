@@ -1,0 +1,50 @@
+/**********************************************************************************************
+ * Project Name       : Multiplexor sel 2
+ * Engineer           : Daniel Diaz Platon
+ * Module description : 
+ * Target             : 5CSXFC6D6F31C6
+ * Date               : 2024/05/02
+ **********************************************************************************************/
+
+module Accumulator #(parameter  WIDTH = 11, parameter WIDTH_ACC = 5, parameter WIDTH_MUL = 5)
+(
+    input  [WIDTH-1:0]     DI,
+    input  [WIDTH_MUL-1:0] DI_MUL,
+    input                  enable,
+    input  [1:0]           s,
+    output [WIDTH-1:0]     DO
+);
+
+reg [WIDTH_ACC-1:0] tmp;
+
+localparam [1:0] B_01 = 2'b01;
+localparam [1:0] B_10 = 2'b10;
+
+always @(s) 
+    begin
+        if (enable) 
+        begin
+            case (s)
+                B_01: 
+                    begin
+                        tmp = (DI[WIDTH-1:WIDTH_ACC+1] + DI_MUL[WIDTH_MUL-1:0]);
+                    end
+                B_10:
+                    begin
+                        tmp = (DI[WIDTH-1:WIDTH_ACC+1] + (~DI_MUL[WIDTH_MUL-1:0] + 1'b1));
+                    end 
+                default: 
+                    begin
+                        tmp = DI[WIDTH-1:WIDTH_ACC+1];
+                    end
+            endcase
+        end
+        else
+            begin
+                tmp = DI[WIDTH-1:WIDTH_ACC+1];
+            end
+    end
+
+assign DO = {tmp, DI[WIDTH_ACC:1],DI[0]};
+
+endmodule

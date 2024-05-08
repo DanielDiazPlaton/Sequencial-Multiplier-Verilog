@@ -1,0 +1,18 @@
+/**********************************************************************************************
+ * Project Name       : Sequencial_Multiplier
+ * Engineer           : Daniel Diaz Platon
+ * Module description : 
+ * Target             : 5CSXFC6D6F31C6
+ * Date               : 2024/00/00
+ **********************************************************************************************/
+
+module Sequencial_Multiplier 
+(
+    input              clk,
+    input              enable,
+    input  [WIDTH-1:0] data,
+    output [WIDTH-1:0] out
+);
+
+
+endmodule

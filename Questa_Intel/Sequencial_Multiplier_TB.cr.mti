@@ -1,0 +1,57 @@
+C:/Users/USER/OneDrive/MasterDegreeElectronicDesign/January_May_2024/Digital_Design/projects_quartus/P2/Sources/Sequencial_Multiplier.v {1 {vlog -work work -vopt -stats=none C:/Users/USER/OneDrive/MasterDegreeElectronicDesign/January_May_2024/Digital_Design/projects_quartus/P2/Sources/Sequencial_Multiplier.v
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module Sequencial_Multiplier
+
+Top level modules:
+	Sequencial_Multiplier
+
+} {} {}} C:/Users/USER/OneDrive/MasterDegreeElectronicDesign/January_May_2024/Digital_Design/projects_quartus/P2/Sources/Accumulator.v {1 {vlog -work work -vopt -stats=none C:/Users/USER/OneDrive/MasterDegreeElectronicDesign/January_May_2024/Digital_Design/projects_quartus/P2/Sources/Accumulator.v
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module Accumulator
+
+Top level modules:
+	Accumulator
+
+} {} {}} C:/Users/USER/OneDrive/MasterDegreeElectronicDesign/January_May_2024/Digital_Design/projects_quartus/P2/Sources/Counter_Param.v {1 {vlog -work work -vopt -stats=none C:/Users/USER/OneDrive/MasterDegreeElectronicDesign/January_May_2024/Digital_Design/projects_quartus/P2/Sources/Counter_Param.v
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module Counter_Param
+
+Top level modules:
+	Counter_Param
+
+} {} {}} C:/Users/USER/OneDrive/MasterDegreeElectronicDesign/January_May_2024/Digital_Design/projects_quartus/P2/Sources/Mux2.v {1 {vlog -work work -vopt -stats=none C:/Users/USER/OneDrive/MasterDegreeElectronicDesign/January_May_2024/Digital_Design/projects_quartus/P2/Sources/Mux2.v
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module Mux2
+
+Top level modules:
+	Mux2
+
+} {} {}} C:/Users/USER/OneDrive/MasterDegreeElectronicDesign/January_May_2024/Digital_Design/projects_quartus/P2/Sources/Register.v {1 {vlog -work work -vopt -stats=none C:/Users/USER/OneDrive/MasterDegreeElectronicDesign/January_May_2024/Digital_Design/projects_quartus/P2/Sources/Register.v
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module Register
+
+Top level modules:
+	Register
+
+} {} {}} C:/Users/USER/OneDrive/MasterDegreeElectronicDesign/January_May_2024/Digital_Design/projects_quartus/P2/Sources/FSM.v {1 {vlog -work work -vopt -stats=none C:/Users/USER/OneDrive/MasterDegreeElectronicDesign/January_May_2024/Digital_Design/projects_quartus/P2/Sources/FSM.v
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module FSM
+
+Top level modules:
+	FSM
+
+} {} {}} C:/Users/USER/OneDrive/MasterDegreeElectronicDesign/January_May_2024/Digital_Design/projects_quartus/P2/Sources/Arithmeric_shift_rigth.v {1 {vlog -work work -vopt -stats=none C:/Users/USER/OneDrive/MasterDegreeElectronicDesign/January_May_2024/Digital_Design/projects_quartus/P2/Sources/Arithmeric_shift_rigth.v
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module Arithmeric_shift_rigth
+
+Top level modules:
+	Arithmeric_shift_rigth
+
+} {} {}} C:/Users/USER/OneDrive/MasterDegreeElectronicDesign/January_May_2024/Digital_Design/projects_quartus/P2/Questa_Intel/Accumulator_TB.v {1 {vlog -work work -vopt -stats=none C:/Users/USER/OneDrive/MasterDegreeElectronicDesign/January_May_2024/Digital_Design/projects_quartus/P2/Questa_Intel/Accumulator_TB.v
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module Accumulator_TB
+
+Top level modules:
+	Accumulator_TB
+
+} {} {}}
